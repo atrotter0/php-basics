@@ -14,7 +14,7 @@
 <body>
   <h1>PHP Basics</h1>
   <ul>
-    <li><a href="letter.php">Letter To A Friend</a></li>
+    <li><a href="letter-form.php">Letter To A Friend</a></li>
     <li><a href="order-form.php">Order Form</a></li>
   </ul>
 </body>
