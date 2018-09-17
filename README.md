@@ -6,7 +6,14 @@
 
 A simple webpage built with php to refresh php basics.
 
-## Setup/Contribution Requirements
+## Setup
+
+1. Install PHP
+1. Install MAMP
+1. Start MAMP Mysql Server and Apache Server
+1. Run `php -S localhost:3000` to start your dev server on port 3000 
+
+## Contribution Requirements
 
 1. Clone the repo
 1. Make a new branch
