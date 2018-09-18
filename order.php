@@ -1,10 +1,15 @@
 <?php
+    $SHIPPING_DIVISOR = 20;
+
     $name = $_GET["name"];
     $street_address = $_GET["address"];
     $apt = $_GET["apt"];
     $city = $_GET["city"];
     $state = $_GET["state"];
     $zip = $_GET["zip"];
+    $weight = $_GET["weight"];
+    $distance = $_GET["distance"];
+    $cost = ($distance / $SHIPPING_DIVISOR) + ($weight / $SHIPPING_DIVISOR);
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +35,7 @@
       City: <?php echo $city ?><br/>
       State: <?php echo $state ?>
     </p>
+    <p>Cost: <span class="bold-text">$<?php echo $cost ?></span>
     <hr/>
     <a href="index.php">Home</a>
   </div>

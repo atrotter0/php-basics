@@ -13,6 +13,7 @@
   <div class="container">
     <div class="container">
     <h1>Order Form:</h1>
+    <h2>User Details</h2>
     <div>
       <form action="order.php">
         <div class="form-group">
@@ -34,6 +35,15 @@
         <div class="form-group">
           <label for="state">State:</label>
           <input type="text" name="state" class="form-control">
+        </div>
+        <h2>Product Details</h2>
+        <div class="form-group">
+          <label for="weight">Weight (lb):</label>
+          <input type="number" name="weight" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="distance">Distance (miles):</label>
+          <input type="number" name="distance" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Place Order</button>
         <a href="index.php"><button type="button" class="btn btn-primary">Back</button></a>
