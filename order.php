@@ -1,6 +1,4 @@
 <?php
-    $SHIPPING_DIVISOR = 20;
-
     $name = $_GET["name"];
     $street_address = $_GET["address"];
     $apt = $_GET["apt"];
@@ -9,7 +7,12 @@
     $zip = $_GET["zip"];
     $weight = $_GET["weight"];
     $distance = $_GET["distance"];
-    $cost = ($distance / $SHIPPING_DIVISOR) + ($weight / $SHIPPING_DIVISOR);
+    $shipping_price = calculateShipping($weight, $distance);
+
+    function calculateShipping($weight, $distance)
+    {
+        return round(($weight / 20) + ($distance / 20));
+    }
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +38,7 @@
       City: <?php echo $city ?><br/>
       State: <?php echo $state ?>
     </p>
-    <p>Cost: <span class="bold-text">$<?php echo $cost ?></span>
+    <p>Shipping Price: <span class="bold-text">$<?php echo $shipping_price ?></span>
     <hr/>
     <a href="index.php">Home</a>
   </div>
