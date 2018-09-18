@@ -11,7 +11,9 @@
 
     function calculateShipping($weight, $distance)
     {
-        return round(($weight / 20) + ($distance / 20));
+        $cost = 0;
+        if ($weight && $distance) { $cost = round(($weight / 20) + ($distance / 20)); }
+        return $cost;
     }
 ?>
 

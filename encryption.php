@@ -1,3 +1,22 @@
+<?php
+    $sentence_one = $_GET["sentence_one"];
+    $sentence_two = $_GET["sentence_two"];
+    $sentence_three = $_GET["sentence_three"];
+    $phrases = array($sentence_one, $sentence_two, $sentence_three);
+    $encrypted = encrypt($phrases);
+    
+    function encrypt($phrases_array)
+    {
+        $encrypted_phrase = "No input from user.";
+        foreach ($phrases_array as $phrase) {
+            $phrase = strrev($phrase);
+            $phrase = strtoupper($phrase);
+            $encrypted_phrase = $encrypted_phrase . $phrase;
+        }
+        return $encrypted_phrase;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +31,11 @@
   <script src="js/scripts.js"></script>
 </head>
 <body>
-  <h1>PHP Basics</h1>
-  <ul>
-    <li><a href="letter-form.php">Letter To A Friend</a></li>
-    <li><a href="order-form.php">Order Form</a></li>
-    <li><a href="encryption-form.php">Encryption Form</a></li>
-  </ul>
+  <div class="container">
+    <h1>Encrypted Phrases:</h1>
+    <p><?php echo $encrypted ?></p>
+    <hr/>
+    <a href="index.php">Home</a>
+  </div>
 </body>
 </html>
